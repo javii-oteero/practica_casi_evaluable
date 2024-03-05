@@ -69,4 +69,36 @@ class EmpleadoBRTest {
     }
 
 // HASTA AQUI SEGUNDOS 5 TESTS
+
+    @Test
+    void calculaSalarioBrutoVendedor15003h(){
+        EmpleadoBR empleado = new EmpleadoBR(TipoEmpleado.vendedor, 1500, 3);
+        assertEquals(1260, empleado.calcularSalarioBruto());
+    }
+
+    @Test
+    void calculaSalarioBrutoVendedor1499Con99Y0h(){
+        EmpleadoBR empleado = new EmpleadoBR(TipoEmpleado.vendedor, 1499.99f, 0);
+        assertEquals(1100, empleado.calcularSalarioBruto(), 0.0001);
+    }
+
+    @Test
+    void calculaSalarioBrutoEncargado12508h(){
+        EmpleadoBR empleado = new EmpleadoBR(TipoEmpleado.encargado, 1250, 8);
+        assertEquals(1760, empleado.calcularSalarioBruto());
+    }
+
+    @Test
+    void calculaSalarioBrutoEncargado1000Y0h(){
+        EmpleadoBR empleado = new EmpleadoBR(TipoEmpleado.encargado, 1000, 0);
+        assertEquals(1600, empleado.calcularSalarioBruto());
+    }
+
+    @Test
+    void calculaSalarioBrutoEncargado999Con99Y3h(){
+        EmpleadoBR empleado = new EmpleadoBR(TipoEmpleado.encargado, 999.99f, 3);
+        assertEquals(1560, empleado.calcularSalarioBruto(), 0.0001);
+    }
+
+    //HASTA AQUI 15 TESTS PASADOS
 }
