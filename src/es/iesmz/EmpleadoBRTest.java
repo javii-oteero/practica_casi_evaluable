@@ -35,4 +35,38 @@ class EmpleadoBRTest {
         EmpleadoBR empleado = new EmpleadoBR(TipoEmpleado.vendedor, 0, 0);
         assertEquals(840, empleado.calcularSalarioNeto(1000));
     }
+
+    // HASTA AQUI PRIMEROS 5 TESTS
+
+    @Test
+    void calcularSalarioNeto999Con99(){
+        EmpleadoBR empleado = new EmpleadoBR(TipoEmpleado.vendedor, 0, 0);
+        assertEquals(999.99, empleado.calcularSalarioNeto(999.99f), 0.0001);
+    }
+
+    @Test
+    void calcularSalarioNeto500(){
+        EmpleadoBR empleado = new EmpleadoBR(TipoEmpleado.vendedor, 0, 0);
+        assertEquals(500, empleado.calcularSalarioNeto(500));
+    }
+
+    @Test
+    void calcularSalarioNeto0(){
+        EmpleadoBR empleado = new EmpleadoBR(TipoEmpleado.vendedor, 0, 0);
+        assertEquals(0, empleado.calcularSalarioNeto(0));
+    }
+
+    @Test
+    void calcularSalarioNetoNegativo(){
+        EmpleadoBR empleado = new EmpleadoBR(TipoEmpleado.vendedor, 0, 0);
+        assertEquals(-1, empleado.calcularSalarioNeto(-1));
+    }
+
+    @Test
+    void calculaSalarioBrutoVendedor20008h(){
+        EmpleadoBR empleado = new EmpleadoBR(TipoEmpleado.vendedor, 2000, 8);
+        assertEquals(1360, empleado.calcularSalarioBruto());
+    }
+
+// HASTA AQUI SEGUNDOS 5 TESTS
 }

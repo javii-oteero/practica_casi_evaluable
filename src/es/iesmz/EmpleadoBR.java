@@ -45,8 +45,8 @@ public class EmpleadoBR {
         int total = 0;
         if (tipo == TipoEmpleado.vendedor) total += baseVendedor;
         else if (tipo == TipoEmpleado.encargado) total += baseEncargado;
-        else if (ventasMes >= 1500) total += prima2VentasMes - prima1VentasMes;
-        // Si se cumple la segunda prima, la primera tambien, por eso se resta
+
+        if (ventasMes >= 1500) total += prima2VentasMes;
         else if (ventasMes >= 1000) total += prima1VentasMes;
         total += horasExtra * precioHoraExtra;
         return total;
